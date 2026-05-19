@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farms & Nature – Nueva Vizcaya Tourism</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <section class="nv-hero nv-hero-sm banner-farms">
+    <div class="text-center px-3">
+      <div class="gold-badge">Agri-Tourism</div>
+      <h1>FARMS & NATURE</h1>
+      <h3>Experience Nueva Vizcaya's Bountiful Highlands</h3>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Farm & Nature Destinations</h2>
+        <div class="section-divider mx-auto"></div>
+        <p class="section-subtitle">As the Citrus Capital of the Philippines, Nueva Vizcaya's farms and nature parks offer a refreshing agri-tourism experience.</p>
+      </div>
+      <div class="row g-4" id="destinationsContainer"></div>
+
+      <!-- Extra farm cards -->
+      <div class="row g-4 mt-2">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="nv-card card">
+            <img src="images/citrus.jpeg" class="card-img-top fixed-img" alt="Citrus Farm">
+            <div class="card-body">
+              <span class="badge-cat">Agri-Tourism</span>
+              <span class="badge-city ms-2">📍 Various</span>
+              <h5 class="card-title mt-2">Citrus Farms</h5>
+              <p class="card-text">Visit the citrus farms that have earned Nueva Vizcaya its title of Citrus Capital. Sample fresh oranges, ponkans, and dalandan straight from the trees in the cool highland air.</p>
+              <div class="card-meta"><span>🕐 7:00 AM – 5:00 PM</span><span>🎫 Varies</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="nv-card card">
+            <img src="images/forest.jpg" class="card-img-top fixed-img" alt="Eco Park">
+            <div class="card-body">
+              <span class="badge-cat">Eco-Tourism</span>
+              <span class="badge-city ms-2">📍 Alfonso Castañeda</span>
+              <h5 class="card-title mt-2">Magat Watershed Forest Reserve</h5>
+              <p class="card-text">Explore this protected watershed area teeming with biodiversity. The forest reserve is home to diverse bird species and provides critical water supply for the region.</p>
+              <div class="card-meta"><span>🕐 8:00 AM – 5:00 PM</span><span>🎫 ₱50</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="nv-card card">
+            <img src="images/humming.jpg" class="card-img-top fixed-img" alt="Bird Sanctuary">
+            <div class="card-body">
+              <span class="badge-cat">Wildlife</span>
+              <span class="badge-city ms-2">📍 Diadi</span>
+              <h5 class="card-title mt-2">Diadi Bird Sanctuary</h5>
+              <p class="card-text">A haven for bird lovers, this sanctuary protects various species of birds including endemic Philippine species. Guided bird-watching tours are available at dawn.</p>
+              <div class="card-meta"><span>🕐 5:30 AM – 10:00 AM</span><span>🎫 ₱80</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="modal-placeholder"></div>
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // show farm/nature destinations
+      const farmDests = destinations.filter(d => d.name.toLowerCase().includes('farm') || d.name.toLowerCase().includes('eco') || d.name.toLowerCase().includes('magat'));
+      renderDestinationCards(farmDests, 'destinationsContainer');
+    });
+  </script>
+</body>
+</html>

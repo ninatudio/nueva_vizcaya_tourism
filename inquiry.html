@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inquiry Form – Nueva Vizcaya Tourism</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <section class="nv-hero nv-hero-sm banner-inquiry">
+    <div class="text-center px-3">
+      <div class="gold-badge">Get in Touch</div>
+      <h1>INQUIRY FORM</h1>
+      <h3>Plan Your Perfect Nueva Vizcaya Adventure</h3>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+
+          <div class="text-center mb-5">
+            <p class="text-gold fw-bold text-uppercase" style="letter-spacing:2px;font-size:.85rem">We're Here to Help</p>
+            <h2 class="section-title">Send Us an Inquiry</h2>
+            <div class="section-divider mx-auto"></div>
+            <p class="section-subtitle">Fill out the form below and our tourism team will get back to you within 1–2 business days with information, recommendations, and itinerary suggestions.</p>
+          </div>
+
+          <!-- Success Message -->
+          <div class="form-success-msg" id="formSuccess">
+            <div style="font-size:3rem;margin-bottom:1rem">✅</div>
+            <h4 style="font-family:'Playfair Display',serif;color:var(--green-dark)">Inquiry Sent Successfully!</h4>
+            <p class="text-muted mb-0">Thank you for reaching out! Our Nueva Vizcaya Tourism team will review your inquiry and respond within 1–2 business days. We look forward to helping you plan an unforgettable trip!</p>
+          </div>
+
+          <!-- Inquiry Form -->
+          <div class="inquiry-form-wrap" id="inquiryFormWrap">
+            <form id="inquiryForm" novalidate>
+
+              <div class="row g-3">
+
+                <!-- Full Name -->
+                <div class="col-12 col-md-6">
+                  <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="fullName" placeholder="e.g. Juan dela Cruz" autocomplete="name">
+                </div>
+
+                <!-- Email -->
+                <div class="col-12 col-md-6">
+                  <label for="emailAddress" class="form-label">Email Address <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" id="emailAddress" placeholder="e.g. juan@example.com" autocomplete="email">
+                </div>
+
+                <!-- Contact Number -->
+                <div class="col-12 col-md-6">
+                  <label for="contactNumber" class="form-label">Contact Number <span class="text-danger">*</span></label>
+                  <input type="tel" class="form-control" id="contactNumber" placeholder="e.g. 09171234567" autocomplete="tel">
+                  <div class="form-text text-muted">Numbers only. Include area code or country code if international.</div>
+                </div>
+
+                <!-- Selected Destination -->
+                <div class="col-12 col-md-6">
+                  <label for="selectedDestination" class="form-label">Selected Destination <span class="text-danger">*</span></label>
+                  <select class="form-select" id="selectedDestination">
+                    <option value="">— Choose a destination —</option>
+                    <!-- Populated by JS from destinations array -->
+                    <optgroup label="Adventure">
+                      <option value="Capisaan Cave System">Capisaan Cave System (Kasibu)</option>
+                      <option value="Lower Magat Eco-Tourism Park">Lower Magat Eco-Tourism Park (Alfonso Castañeda)</option>
+                      <option value="Magat River">Magat River (Bagabag)</option>
+                      <option value="Paitan Flower Farm">Paitan Flower Farm (Santa Fe)</option>
+                    </optgroup>
+                    <optgroup label="Mountains">
+                      <option value="Mount Ugo">Mount Ugo (Kayapa)</option>
+                      <option value="Kayapa Quad Peak">Kayapa Quad Peak (Kayapa)</option>
+                      <option value="Ambaguio Hiking Trail">Ambaguio Hiking Trail (Ambaguio)</option>
+                    </optgroup>
+                    <optgroup label="Waterfalls">
+                      <option value="Imugan Falls">Imugan Falls (Santa Fe)</option>
+                      <option value="Mapalyao Falls">Mapalyao Falls (Kayapa)</option>
+                    </optgroup>
+                    <optgroup label="Historical Sites">
+                      <option value="St. Dominic Cathedral">St. Dominic Cathedral (Bayombong)</option>
+                      <option value="Dupax del Norte Church">Dupax del Norte Parish Church</option>
+                      <option value="Ammungan Festival Grounds">Ammungan Festival Grounds (Bayombong)</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                      <option value="Multiple Destinations">Multiple Destinations (General Tour)</option>
+                      <option value="Other">Other (specify in message)</option>
+                    </optgroup>
+                  </select>
+                </div>
+
+                <!-- Travel Date -->
+                <div class="col-12 col-md-6">
+                  <label for="travelDate" class="form-label">Preferred Travel Date <span class="text-danger">*</span></label>
+                  <input type="date" class="form-control" id="travelDate">
+                </div>
+
+                <!-- Number of Visitors -->
+                <div class="col-12 col-md-6">
+                  <label for="numVisitors" class="form-label">Number of Visitors <span class="text-danger">*</span></label>
+                  <input type="number" class="form-control" id="numVisitors" min="1" max="500" placeholder="e.g. 4">
+                  <div class="form-text text-muted">Minimum 1. For groups of 50+, please specify in your message.</div>
+                </div>
+
+                <!-- Trip Type -->
+                <div class="col-12 col-md-6">
+                  <label for="tripType" class="form-label">Type of Trip</label>
+                  <select class="form-select" id="tripType">
+                    <option value="">— Select trip type —</option>
+                    <option value="Day Trip">Day Trip</option>
+                    <option value="Overnight">Overnight (1 night)</option>
+                    <option value="Weekend">Weekend (2–3 nights)</option>
+                    <option value="Extended">Extended Stay (4+ nights)</option>
+                    <option value="Cultural Tour">Cultural / Indigenous Tour</option>
+                    <option value="Adventure Tour">Adventure / Trekking Tour</option>
+                    <option value="Educational Tour">Educational / School Tour</option>
+                  </select>
+                </div>
+
+                <!-- Budget Range -->
+                <div class="col-12 col-md-6">
+                  <label for="budgetRange" class="form-label">Approximate Budget per Person</label>
+                  <select class="form-select" id="budgetRange">
+                    <option value="">— Select budget range —</option>
+                    <option value="Under ₱1,000">Under ₱1,000 (Budget)</option>
+                    <option value="₱1,000–₱3,000">₱1,000–₱3,000 (Standard)</option>
+                    <option value="₱3,000–₱6,000">₱3,000–₱6,000 (Comfortable)</option>
+                    <option value="₱6,000+">₱6,000+ (Premium)</option>
+                  </select>
+                </div>
+
+                <!-- Accommodation Needed -->
+                <div class="col-12">
+                  <label class="form-label">Do you need accommodation assistance?</label>
+                  <div class="d-flex gap-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="accommodation" id="accomYes" value="Yes">
+                      <label class="form-check-label text-muted" for="accomYes">Yes, please suggest options</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="accommodation" id="accomNo" value="No">
+                      <label class="form-check-label text-muted" for="accomNo">No, I have my own arrangements</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Interests -->
+                <div class="col-12">
+                  <label class="form-label">Interests (select all that apply)</label>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check"><input class="form-check-input" type="checkbox" id="intNature" value="Nature"><label class="form-check-label text-muted" for="intNature">🌿 Nature</label></div>
+                    <div class="form-check"><input class="form-check-input" type="checkbox" id="intAdventure" value="Adventure"><label class="form-check-label text-muted" for="intAdventure">🎒 Adventure</label></div>
+                    <div class="form-check"><input class="form-check-input" type="checkbox" id="intCulture" value="Culture"><label class="form-check-label text-muted" for="intCulture">🎭 Culture</label></div>
+                    <div class="form-check"><input class="form-check-input" type="checkbox" id="intFood" value="Food"><label class="form-check-label text-muted" for="intFood">🍽️ Food</label></div>
+                    <div class="form-check"><input class="form-check-input" type="checkbox" id="intHistory" value="History"><label class="form-check-label text-muted" for="intHistory">🏛️ History</label></div>
+                    <div class="form-check"><input class="form-check-input" type="checkbox" id="intPhotography" value="Photography"><label class="form-check-label text-muted" for="intPhotography">📸 Photography</label></div>
+                  </div>
+                </div>
+
+                <!-- Message -->
+                <div class="col-12">
+                  <label for="inquiryMessage" class="form-label">Message / Additional Information <span class="text-danger">*</span></label>
+                  <textarea class="form-control" id="inquiryMessage" rows="5" placeholder="Tell us more about your planned trip — any special requests, accessibility needs, or questions you may have..."></textarea>
+                </div>
+
+                <!-- How did you hear -->
+                <div class="col-12">
+                  <label for="referralSource" class="form-label">How did you hear about us?</label>
+                  <select class="form-select" id="referralSource">
+                    <option value="">— Select an option —</option>
+                    <option value="Social Media">Social Media (Facebook, Instagram)</option>
+                    <option value="Search Engine">Search Engine (Google, etc.)</option>
+                    <option value="Friend / Family">Friend or Family Recommendation</option>
+                    <option value="Travel Blog">Travel Blog or Vlog</option>
+                    <option value="School / Work">School or Work</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <!-- Submit -->
+                <div class="col-12 mt-2">
+                  <button type="submit" class="btn btn-nv-primary btn-lg w-100">
+                    📩 Submit Inquiry
+                  </button>
+                  <p class="text-muted text-center mt-3" style="font-size:.85rem">
+                    Fields marked with <span class="text-danger">*</span> are required. We respect your privacy and will never share your information with third parties.
+                  </p>
+                </div>
+
+              </div><!-- end row -->
+            </form>
+          </div><!-- end form-wrap -->
+
+        </div>
+      </div><!-- end row -->
+
+      <!-- Contact Info Below Form -->
+      <div class="row g-4 mt-4 justify-content-center">
+        <div class="col-12 col-md-4">
+          <div class="tip-card text-center">
+            <div class="tip-icon">📍</div>
+            <h5>Our Office</h5>
+            <p class="text-muted">Provincial Tourism Office<br>Capitol Complex, Bayombong<br>Nueva Vizcaya, Philippines</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="tip-card text-center">
+            <div class="tip-icon">📞</div>
+            <h5>Call Us</h5>
+            <p class="text-muted">(078) 321-2002<br>Monday – Friday<br>8:00 AM – 5:00 PM</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="tip-card text-center">
+            <div class="tip-icon">✉️</div>
+            <h5>Email Us</h5>
+            <p class="text-muted">tourism@nuevavizcaya.gov.ph<br>We respond within<br>1–2 business days</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

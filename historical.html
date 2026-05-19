@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historical Sites – Nueva Vizcaya Tourism</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <section class="nv-hero nv-hero-sm banner-churches">
+    <div class="text-center px-3">
+      <div class="gold-badge">Heritage & History</div>
+      <h1>HISTORICAL SITES</h1>
+      <h3>Walk Through Nueva Vizcaya's Living History</h3>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Churches, Cathedrals & Heritage Sites</h2>
+        <div class="section-divider mx-auto"></div>
+        <p class="section-subtitle">These sacred and historic landmarks tell the story of Nueva Vizcaya's colonial past and enduring faith.</p>
+      </div>
+      <div class="row g-4" id="destinationsContainer"></div>
+
+      <div class="row g-4 mt-2">
+        <div class="col-12 col-md-6">
+          <div class="nv-card card">
+            <img src="images/cathedral.jpg" class="card-img-top fixed-img" alt="St. Dominic Cathedral">
+            <div class="card-body">
+              <span class="badge-cat">Church</span>
+              <span class="badge-city ms-2">📍 Bayombong</span>
+              <h5 class="card-title mt-2">St. Dominic Cathedral</h5>
+              <p class="card-text">The main cathedral of the Diocese of Bayombong, this stunning Spanish colonial church is a beloved heritage landmark and center of spiritual life in the province.</p>
+              <div class="card-meta"><span>🕐 6:00 AM – 6:00 PM</span><span>🎫 Free</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="nv-card card">
+            <img src="images/dupax.jpg" class="card-img-top fixed-img" alt="Dupax Church">
+            <div class="card-body">
+              <span class="badge-cat">Church</span>
+              <span class="badge-city ms-2">📍 Dupax del Norte</span>
+              <h5 class="card-title mt-2">Dupax del Norte Parish Church</h5>
+              <p class="card-text">One of the oldest churches in Nueva Vizcaya, this centuries-old stone church features thick colonial-era walls and a historic bell tower that has stood for over 300 years.</p>
+              <div class="card-meta"><span>🕐 6:00 AM – 5:00 PM</span><span>🎫 Free</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="nv-card card">
+            <img src="images/joseph.jpg" class="card-img-top fixed-img" alt="Church">
+            <div class="card-body">
+              <span class="badge-cat">Church</span>
+              <span class="badge-city ms-2">📍 Solano</span>
+              <h5 class="card-title mt-2">St. Joseph Parish Church</h5>
+              <p class="card-text">A beautiful and active parish church in the trading hub of Solano, reflecting the town's importance as a commercial and religious center in the eastern part of the province.</p>
+              <div class="card-meta"><span>🕐 6:00 AM – 6:00 PM</span><span>🎫 Free</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="nv-card card">
+            <img src="images/edralin.jpg" class="card-img-top fixed-img" alt="Museum">
+            <div class="card-body">
+              <span class="badge-cat">Museum</span>
+              <span class="badge-city ms-2">📍 Bayombong</span>
+              <h5 class="card-title mt-2">Nueva Vizcaya Museum</h5>
+              <p class="card-text">Explore artifacts, photographs, and exhibits showcasing the history, culture, and heritage of Nueva Vizcaya's diverse communities and their traditions through the ages.</p>
+              <div class="card-meta"><span>🕐 8:00 AM – 5:00 PM</span><span>🎫 ₱30</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="modal-placeholder"></div>
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hist = destinations.filter(d => d.category === 'Historical Site');
+      renderDestinationCards(hist, 'destinationsContainer');
+    });
+  </script>
+</body>
+</html>

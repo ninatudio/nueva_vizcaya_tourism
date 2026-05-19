@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourist Destinations – Nueva Vizcaya Tourism</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <section class="nv-hero nv-hero-sm banner-destination">
+    <div class="text-center px-3">
+      <div class="gold-badge">Explore the Province</div>
+      <h1>TOURIST DESTINATIONS</h1>
+      <h3>Discover the Best of Nueva Vizcaya's Natural and Cultural Wonders</h3>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <!-- Search & Filter -->
+      <div class="search-filter-bar">
+        <div class="row g-3 align-items-center">
+          <div class="col-12 col-md-5">
+            <input type="text" class="form-control" id="destinationSearch" placeholder="🔍 Search by name or municipality...">
+          </div>
+          <div class="col-12 col-md-4">
+            <select class="form-select" id="categorySelect">
+              <option value="All">All Categories</option>
+              <option value="Mountain">⛰️ Mountain</option>
+              <option value="Waterfall">💧 Waterfall</option>
+              <option value="Adventure">🎒 Adventure</option>
+              <option value="Historical Site">🏛️ Historical Site</option>
+            </select>
+          </div>
+          <div class="col-12 col-md-3 text-md-end">
+            <span class="text-muted" style="font-size:.88rem" id="resultCount"></span>
+          </div>
+        </div>
+        <div class="filter-btn-group mt-3">
+          <button class="btn filter-btn active" data-cat="All">All</button>
+          <button class="btn filter-btn" data-cat="Mountain">⛰️ Mountain</button>
+          <button class="btn filter-btn" data-cat="Waterfall">💧 Waterfall</button>
+          <button class="btn filter-btn" data-cat="Adventure">🎒 Adventure</button>
+          <button class="btn filter-btn" data-cat="Historical Site">🏛️ Historical</button>
+        </div>
+      </div>
+
+      <div class="row g-4" id="destinationsContainer">
+      </div>
+    </div>
+  </section>
+
+  <div id="modal-placeholder"></div>
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+
+    const observer = new MutationObserver(() => {
+      const count = document.querySelectorAll('.destination-card-item').length;
+      const rc = document.getElementById('resultCount');
+      if (rc) rc.textContent = `Showing ${count} destination${count !== 1 ? 's' : ''}`;
+    });
+    observer.observe(document.getElementById('destinationsContainer') || document.body, { childList: true });
+  </script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery – Nueva Vizcaya Tourism</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <section class="nv-hero nv-hero-sm banner-gallery">
+    <div class="text-center px-3">
+      <div class="gold-badge">Visual Journey</div>
+      <h1>PHOTO GALLERY</h1>
+      <h3>A Glimpse of Nueva Vizcaya's Natural and Cultural Beauty</h3>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="text-gold fw-bold text-uppercase" style="letter-spacing:2px;font-size:.85rem">Browse & Explore</p>
+        <h2 class="section-title">Gallery of Nueva Vizcaya</h2>
+        <div class="section-divider mx-auto"></div>
+        <p class="section-subtitle">Click any photo to open it in full view. Use arrow keys or buttons to navigate between images.</p>
+      </div>
+
+      <div class="filter-btn-group text-center mb-4">
+        <button class="btn active" onclick="filterGallery('all', this)">All Photos</button>
+        <button class="btn" onclick="filterGallery('nature', this)">🌿 Nature</button>
+        <button class="btn" onclick="filterGallery('mountains', this)">⛰️ Mountains</button>
+        <button class="btn" onclick="filterGallery('culture', this)">🎭 Culture</button>
+        <button class="btn" onclick="filterGallery('food', this)">🍽️ Food</button>
+        <button class="btn" onclick="filterGallery('heritage', this)">🏛️ Heritage</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+
+        <div class="gallery-item" data-cat="nature" data-caption="Imugan Falls, Santa Fe">
+          <img src="images/imugan.JPG" alt="Imugan Falls">
+          <div class="gallery-overlay"><span class="gallery-caption">Imugan Falls, Santa Fe</span></div>
+        </div>
+        <div class="gallery-item" data-cat="nature" data-caption="Mapalyao Falls, Kayapa">
+          <img src="images/falls.jpg" alt="Mapalyao Falls">
+          <div class="gallery-overlay"><span class="gallery-caption">Mapalyao Falls, Kayapa</span></div>
+        </div>
+        <div class="gallery-item" data-cat="nature" data-caption="Capisaan Cave System, Kasibu">
+          <img src="images/capisaan.jpg" alt="Capisaan Cave">
+          <div class="gallery-overlay"><span class="gallery-caption">Capisaan Cave System, Kasibu</span></div>
+        </div>
+        <div class="gallery-item" data-cat="nature" data-caption="Cave Formation, Kasibu">
+          <img src="images/cave.jpg" alt="Cave Formation">
+          <div class="gallery-overlay"><span class="gallery-caption">Cave Formation, Kasibu</span></div>
+        </div>
+        <div class="gallery-item" data-cat="nature" data-caption="Lush Forest, Nueva Vizcaya">
+          <img src="images/forest.jpg" alt="Forest">
+          <div class="gallery-overlay"><span class="gallery-caption">Lush Forest, Nueva Vizcaya</span></div>
+        </div>
+        <div class="gallery-item" data-cat="nature" data-caption="Paitan Flower Farm, Santa Fe">
+          <img src="images/farms.jpg" alt="Paitan Farm">
+          <div class="gallery-overlay"><span class="gallery-caption">Paitan Flower Farm, Santa Fe</span></div>
+        </div>
+        <div class="gallery-item" data-cat="nature" data-caption="Citrus Orchards, Kayapa">
+          <img src="images/citrus.jpeg" alt="Citrus Farm">
+          <div class="gallery-overlay"><span class="gallery-caption">Citrus Orchards, Kayapa</span></div>
+        </div>
+        <div class="gallery-item" data-cat="nature" data-caption="Citrus Harvest, Nueva Vizcaya">
+          <img src="images/citrus.png" alt="Citrus Harvest">
+          <div class="gallery-overlay"><span class="gallery-caption">Citrus Harvest, Nueva Vizcaya</span></div>
+        </div>
+        <div class="gallery-item" data-cat="nature" data-caption="Hummingbird, Nueva Vizcaya">
+          <img src="images/humming.jpg" alt="Hummingbird">
+          <div class="gallery-overlay"><span class="gallery-caption">Hummingbird, Nueva Vizcaya</span></div>
+        </div>
+        <div class="gallery-item" data-cat="mountains" data-caption="Mountain Trekking, Nueva Vizcaya">
+          <img src="images/hiking.jpg" alt="Hiking">
+          <div class="gallery-overlay"><span class="gallery-caption">Mountain Trekking, Nueva Vizcaya</span></div>
+        </div>
+        <div class="gallery-item" data-cat="mountains" data-caption="Kayapa Mountain Views">
+          <img src="images/kayapa.jpg" alt="Kayapa">
+          <div class="gallery-overlay"><span class="gallery-caption">Kayapa Mountain Views</span></div>
+        </div>
+        <div class="gallery-item" data-cat="mountains" data-caption="Scenic Landscape, Nueva Vizcaya">
+          <img src="images/about.jpg" alt="Landscape">
+          <div class="gallery-overlay"><span class="gallery-caption">Scenic Landscape, Nueva Vizcaya</span></div>
+        </div>
+        <div class="gallery-item" data-cat="mountains" data-caption="Activities in the Highlands">
+          <img src="images/activities.JPG" alt="Highland Activities">
+          <div class="gallery-overlay"><span class="gallery-caption">Activities in the Highlands</span></div>
+        </div>
+        <div class="gallery-item" data-cat="culture" data-caption="Ammungan Festival, Bayombong">
+          <img src="images/ammungan.jpg" alt="Ammungan Festival">
+          <div class="gallery-overlay"><span class="gallery-caption">Ammungan Festival, Bayombong</span></div>
+        </div>
+        <div class="gallery-item" data-cat="culture" data-caption="Ammungan Festival Dancers">
+          <img src="images/ammungan.png" alt="Ammungan Dancers">
+          <div class="gallery-overlay"><span class="gallery-caption">Ammungan Festival Dancers</span></div>
+        </div>
+        <div class="gallery-item" data-cat="culture" data-caption="Festival Celebrations, Nueva Vizcaya">
+          <img src="images/festival.jpg" alt="Festival">
+          <div class="gallery-overlay"><span class="gallery-caption">Festival Celebrations, Nueva Vizcaya</span></div>
+        </div>
+        <div class="gallery-item" data-cat="culture" data-caption="Cultural Heritage, Nueva Vizcaya">
+          <img src="images/culture.jpg" alt="Culture">
+          <div class="gallery-overlay"><span class="gallery-caption">Cultural Heritage, Nueva Vizcaya</span></div>
+        </div>
+        <div class="gallery-item" data-cat="culture" data-caption="Bugkalot People, Eastern Nueva Vizcaya">
+          <img src="images/bugkalot.jpg" alt="Bugkalot">
+          <div class="gallery-overlay"><span class="gallery-caption">Bugkalot People, Eastern NV</span></div>
+        </div>
+        <div class="gallery-item" data-cat="culture" data-caption="Gaddang Indigenous Community">
+          <img src="images/gaddang.jpg" alt="Gaddang">
+          <div class="gallery-overlay"><span class="gallery-caption">Gaddang Indigenous Community</span></div>
+        </div>
+        <div class="gallery-item" data-cat="culture" data-caption="Kalanguya People, Kayapa">
+          <img src="images/kalanguya.jpg" alt="Kalanguya">
+          <div class="gallery-overlay"><span class="gallery-caption">Kalanguya People, Kayapa</span></div>
+        </div>
+        <div class="gallery-item" data-cat="culture" data-caption="Kalanguya Community Life">
+          <img src="images/kalanguya2.jpg" alt="Kalanguya Life">
+          <div class="gallery-overlay"><span class="gallery-caption">Kalanguya Community Life</span></div>
+        </div>
+        <div class="gallery-item" data-cat="culture" data-caption="Dumagat People, Nueva Vizcaya">
+          <img src="images/dumagat.jpg" alt="Dumagat">
+          <div class="gallery-overlay"><span class="gallery-caption">Dumagat People, Nueva Vizcaya</span></div>
+        </div>
+        <div class="gallery-item" data-cat="culture" data-caption="Isinai Community, Aritao">
+          <img src="images/isinai.jpg" alt="Isinai">
+          <div class="gallery-overlay"><span class="gallery-caption">Isinai Community, Aritao</span></div>
+        </div>
+        <div class="gallery-item" data-cat="culture" data-caption="Ifugao Tradition, Nueva Vizcaya">
+          <img src="images/ifugao.jpg" alt="Ifugao">
+          <div class="gallery-overlay"><span class="gallery-caption">Ifugao Tradition, Nueva Vizcaya</span></div>
+        </div>
+        <div class="gallery-item" data-cat="culture" data-caption="Indigenous Peoples of Nueva Vizcaya">
+          <img src="images/indigeneous.jpeg" alt="Indigenous Peoples">
+          <div class="gallery-overlay"><span class="gallery-caption">Indigenous Peoples of Nueva Vizcaya</span></div>
+        </div>
+        <div class="gallery-item" data-cat="culture" data-caption="Language and Arts, Nueva Vizcaya">
+          <img src="images/language.jpg" alt="Language">
+          <div class="gallery-overlay"><span class="gallery-caption">Language and Arts, Nueva Vizcaya</span></div>
+        </div>
+        <div class="gallery-item" data-cat="food" data-caption="Bagnet – Crispy Pork Belly">
+          <img src="images/bagnet.jpg" alt="Bagnet">
+          <div class="gallery-overlay"><span class="gallery-caption">Bagnet – Crispy Pork Belly</span></div>
+        </div>
+        <div class="gallery-item" data-cat="food" data-caption="Inabraw – Indigenous Vegetable Stew">
+          <img src="images/inabraw.jpg" alt="Inabraw">
+          <div class="gallery-overlay"><span class="gallery-caption">Inabraw – Indigenous Vegetable Stew</span></div>
+        </div>
+        <div class="gallery-item" data-cat="food" data-caption="Abal-Abal – Fried Flying Termites">
+          <img src="images/abal.jpg" alt="Abal-Abal">
+          <div class="gallery-overlay"><span class="gallery-caption">Abal-Abal – Fried Flying Termites</span></div>
+        </div>
+        <div class="gallery-item" data-cat="food" data-caption="Local Cuisine of Nueva Vizcaya">
+          <img src="images/cuisine.jpg" alt="Cuisine">
+          <div class="gallery-overlay"><span class="gallery-caption">Local Cuisine of Nueva Vizcaya</span></div>
+        </div>
+        <div class="gallery-item" data-cat="food" data-caption="Freshwater Fish – Iwak a Naimas">
+          <img src="images/iwak.jpg" alt="Freshwater Fish">
+          <div class="gallery-overlay"><span class="gallery-caption">Freshwater Fish – Iwak a Naimas</span></div>
+        </div>
+        <div class="gallery-item" data-cat="heritage" data-caption="St. Dominic Cathedral, Bayombong">
+          <img src="images/dominic.jpg" alt="St. Dominic Cathedral">
+          <div class="gallery-overlay"><span class="gallery-caption">St. Dominic Cathedral, Bayombong</span></div>
+        </div>
+        <div class="gallery-item" data-cat="heritage" data-caption="Dupax del Norte Parish Church">
+          <img src="images/dupax.jpg" alt="Dupax Church">
+          <div class="gallery-overlay"><span class="gallery-caption">Dupax del Norte Parish Church</span></div>
+        </div>
+        <div class="gallery-item" data-cat="heritage" data-caption="Courage Monument, Bayombong">
+          <img src="images/courage.jpg" alt="Courage Monument">
+          <div class="gallery-overlay"><span class="gallery-caption">Courage Monument, Bayombong</span></div>
+        </div>
+        <div class="gallery-item" data-cat="heritage" data-caption="Heritage Building, Nueva Vizcaya">
+          <img src="images/edralin.jpg" alt="Heritage Building">
+          <div class="gallery-overlay"><span class="gallery-caption">Heritage Building, Nueva Vizcaya</span></div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-4">
+        <p class="text-muted" id="galleryCount" style="font-size:.9rem"></p>
+      </div>
+    </div>
+  </section>
+
+  <div id="lightbox-placeholder"></div>
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function filterGallery(cat, btn) {
+      document.querySelectorAll('.filter-btn-group .btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const items = document.querySelectorAll('.gallery-item');
+      let visible = 0;
+      items.forEach(item => {
+        if (cat === 'all' || item.dataset.cat === cat) {
+          item.style.display = '';
+          visible++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+      document.getElementById('galleryCount').textContent = `Showing ${visible} photo${visible !== 1 ? 's' : ''}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const total = document.querySelectorAll('.gallery-item').length;
+      document.getElementById('galleryCount').textContent = `Showing ${total} photos`;
+    });
+  </script>
+</body>
+</html>

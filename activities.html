@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventure & Activities – Nueva Vizcaya Tourism</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <section class="nv-hero nv-hero-sm banner-activities">
+    <div class="text-center px-3">
+      <div class="gold-badge">Thrill Seekers Welcome</div>
+      <h1>ADVENTURE & ACTIVITIES</h1>
+      <h3>Get Your Adrenaline Pumping in Nueva Vizcaya</h3>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Adventure Destinations</h2>
+        <div class="section-divider mx-auto"></div>
+        <p class="section-subtitle">From spelunking to river kayaking, Nueva Vizcaya offers thrilling outdoor experiences for every adventure level.</p>
+      </div>
+      <div class="row g-4" id="destinationsContainer"></div>
+
+      <!-- Activity List -->
+      <h3 class="section-title text-center mt-5 mb-2">Popular Activities</h3>
+      <div class="section-divider mx-auto mb-4"></div>
+      <div class="row g-4">
+        <div class="col-6 col-md-3 text-center">
+          <div class="card activity-card p-3 h-100">
+            <div class="icon">🕳️</div>
+            <h6 class="card-title">Spelunking</h6>
+            <p class="card-text text-muted" style="font-size:.85rem">Capisaan Cave, Kasibu</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <div class="card activity-card p-3 h-100">
+            <div class="icon">⛰️</div>
+            <h6 class="card-title">Mountain Trekking</h6>
+            <p class="card-text text-muted" style="font-size:.85rem">Mt. Ugo, Kayapa Peaks</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <div class="card activity-card p-3 h-100">
+            <div class="icon">🏊</div>
+            <h6 class="card-title">Swimming</h6>
+            <p class="card-text text-muted" style="font-size:.85rem">Imugan Falls, Mapalyao</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <div class="card activity-card p-3 h-100">
+            <div class="icon">🎣</div>
+            <h6 class="card-title">Fishing</h6>
+            <p class="card-text text-muted" style="font-size:.85rem">Magat River, Reservoirs</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <div class="card activity-card p-3 h-100">
+            <div class="icon">🏕️</div>
+            <h6 class="card-title">Camping</h6>
+            <p class="card-text text-muted" style="font-size:.85rem">Mountain campsites</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <div class="card activity-card p-3 h-100">
+            <div class="icon">🦜</div>
+            <h6 class="card-title">Bird Watching</h6>
+            <p class="card-text text-muted" style="font-size:.85rem">Diadi, Forest Reserves</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <div class="card activity-card p-3 h-100">
+            <div class="icon">🌸</div>
+            <h6 class="card-title">Farm Visits</h6>
+            <p class="card-text text-muted" style="font-size:.85rem">Paitan Farm, Citrus Farms</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <div class="card activity-card p-3 h-100">
+            <div class="icon">📸</div>
+            <h6 class="card-title">Photography</h6>
+            <p class="card-text text-muted" style="font-size:.85rem">Landscapes & Culture</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="modal-placeholder"></div>
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const adv = destinations.filter(d => d.category === 'Adventure');
+      renderDestinationCards(adv, 'destinationsContainer');
+    });
+  </script>
+</body>
+</html>
